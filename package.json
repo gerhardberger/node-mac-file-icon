@@ -1,0 +1,51 @@
+{
+  "name": "node-mac-file-icon",
+  "version": "0.0.1",
+  "description": "A native module that allows you to fetch system file icons in macOS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerhardberger/node-mac-file-icon.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/gerhardberger/node-mac-file-icon#readme",
+  "bugs": {
+    "url": "https://github.com/gerhardberger/node-mac-file-icon/issues"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^3.0.2"
+  },
+  "devDependencies": {
+    "clang-format": "^1.4.0",
+    "node-gyp": "^7.1.2",
+    "prettier": "^2.0.4"
+  },
+  "scripts": {
+    "build": "node-gyp build",
+    "build:dev": "node-gyp build --debug",
+    "clean": "node-gyp clean",
+    "lint": "prettier --check '**/*.js'",
+    "format": "clang-format -i main.mm FileIconFetcher.m FileIconFetcher.h && prettier --write '**/*.js'",
+    "rebuild": "node-gyp rebuild",
+    "rebuild:dev": "node-gyp rebuild --debug",
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "postinstall": "npm run rebuild"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "printWidth": 80,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "arrowParens": "always",
+    "trailingComma": "es5"
+  },
+  "keywords": [
+    "apple",
+    "file-icon",
+    "macos",
+    "node",
+    "electron",
+    "native"
+  ]
+}
