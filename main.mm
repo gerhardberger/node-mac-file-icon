@@ -20,9 +20,9 @@ Value GetFileIcon( const CallbackInfo& info ) {
   int32_t size = info[2].As<Number>().Uint32Value();
 
   NSString *input = [NSString stringWithCString:input_string.c_str()
-                                       encoding:[NSString defaultCStringEncoding]];
+                                       encoding:NSUTF8StringEncoding];
   NSString *output = [NSString stringWithCString:output_string.c_str()
-                                       encoding:[NSString defaultCStringEncoding]];
+                                       encoding:NSUTF8StringEncoding];
 
   tsfn = ThreadSafeFunction::New(env, info[3].As<Function>(),
       "Thread Safe Function", 0, 1, [](Napi::Env) {});

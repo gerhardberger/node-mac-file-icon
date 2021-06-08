@@ -16,9 +16,6 @@
   self.successBlock = completionHandler;
   self.errorBlock = errorHandler;
 
-  NSURL *inputURL = [[NSWorkspace sharedWorkspace]
-    URLForApplicationWithBundleIdentifier:input];
-
   if ([[NSFileManager defaultManager] fileExistsAtPath:input]) {
     NSImage *imageForInput = [[NSWorkspace sharedWorkspace] iconForFile:input];
 

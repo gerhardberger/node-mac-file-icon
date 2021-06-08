@@ -1,6 +1,6 @@
 {
   "name": "node-mac-file-icon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A native module that allows you to fetch system file icons in macOS",
   "main": "index.js",
   "repository": {
